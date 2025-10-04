@@ -11,6 +11,8 @@ src
           └── instructions.md
 ```
 
+- Run your code against the provided test cases in StacksQueuesTest.java (in src/tests) to verify correctness.
+
 ```java
 // START OF TEMPLATE =========================
 package solutions.StacksQueues;
