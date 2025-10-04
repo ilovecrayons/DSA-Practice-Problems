@@ -1,13 +1,15 @@
 # Stacks and Queues Problemset
 
 - Create a new file StacksQueues.java in this directory.  
-- Copy exact template code below into that file. Note: ignore the triple backticks when copying the code below. they are just used to format the code block in markdown.Your src directory should now look like this:
+- Copy exact template code below into that file. Note: ignore the triple backticks when copying the java code. they are just used to format the code block in markdown.Your src directory should now look like this:
 
+```txt
 src
   └── solutions
       └── StacksQueues
           ├── StacksQueues.java
           └── instructions.md
+```
 
 ```java
 // START OF TEMPLATE =========================
