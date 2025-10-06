@@ -2,6 +2,11 @@ package stutter;
 
 import java.util.Stack;
 
+/**
+ * <a href="https://codestepbystep.com/r/problem/view/java/bjp5/chapter14/e2-stutter">
+ * CodeStepByStep / Java / Building Java Programs, 5th edition / BJP5 Chapter 14 / Exercise 2: stutter
+ * </a>
+ */
 public class Solution {
 
     /**
@@ -25,9 +30,11 @@ public class Solution {
      * <p>
      * You may use a single queue as auxiliary storage to solve this problem.
      * </p>
+     * @param s - Stack of integers.
+     * @return Stack where each number is duplicated while maintaining its relative position in the stack.
      * 
      */
-    public static Stack<Integer> stutter (Stack<Integer> s) {
+    public static Stack<Integer> stutter(Stack<Integer> s) {
         // TODO: Insert your solution below
         return null; 
     }

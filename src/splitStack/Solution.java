@@ -2,6 +2,11 @@ package splitStack;
 
 import java.util.Stack;
 
+/**
+ * <a href="https://codestepbystep.com/r/problem/view/java/bjp5/chapter14/e1-splitStack">
+ * CodeStepByStep / Java / Building Java Programs, 5th edition / BJP5 Chapter 14 / Exercise 1: splitStack
+ * </a>
+ */
 public class Solution {
     /**
      * <p>
