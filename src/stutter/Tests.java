@@ -8,6 +8,8 @@ import java.util.Arrays;
 import java.util.Stack;
 import java.util.stream.Stream;
 
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.TestInfo;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
@@ -46,7 +48,15 @@ public class Tests {
         );
     }
 
-    @ParameterizedTest(name = "case {index}: input={0} => expected={1}")
+    /**
+     * Convenience method to print the name of each test before the test is executed.
+     */
+    @BeforeEach
+    void printInvocationDisplayName(TestInfo testInfo) {
+        System.out.println(testInfo.getDisplayName());
+    }
+
+    @ParameterizedTest(name = "stutterTest_{index}: input={0} => expected={1}")
     @MethodSource("stutterProvider")
     public void stutterTest(ArrayList<Integer> input, ArrayList<Integer> expectedResult) {
         // Prepare the input
