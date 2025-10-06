@@ -1,4 +1,4 @@
-package splitStack;
+package stutter;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
@@ -9,11 +9,10 @@ import java.util.Stack;
 import java.util.stream.Stream;
 
 import org.junit.jupiter.params.ParameterizedTest;
-import org.junit.jupiter.params.provider.MethodSource;
 import org.junit.jupiter.params.provider.Arguments;
+import org.junit.jupiter.params.provider.MethodSource;
 
 public class Tests {
-
     /**
      * Provides a stream of arguments to be passed sequentially to a test method.
      * The arguments are given as <input, expectedResult> pair, each of which are stacks in their ArrayList representation.
@@ -22,45 +21,41 @@ public class Tests {
      * bottom [a1, a2, a3, ... an] top
      * </pre>
      */
-    private static Stream<Arguments> splitStackProvider(){
+    private static Stream<Arguments> stutterProvider(){
         return Stream.of(
             Arguments.of(
-                /* input */    new ArrayList<>(Arrays.asList(5, -10, 15, 0, -5, 100)),
-                /* expected */ new ArrayList<>(Arrays.asList(-5, -10, 100, 0, 15, 5))
+                /* input */    new ArrayList<>(Arrays.asList(3, 7, 1, 14, 9)),
+                /* expected */ new ArrayList<>(Arrays.asList(3, 3, 7, 7, 1, 1, 14, 14, 9, 9))
             ),
             Arguments.of(
                 /* input */    new ArrayList<>(Arrays.asList(1, 2, 3, 0, -3, -2, -1)),
-                /* expected */ new ArrayList<>(Arrays.asList(-1, -2, -3, 0, 3, 2, 1))
+                /* expected */ new ArrayList<>(Arrays.asList(1, 1, 2, 2, 3, 3, 0, 0, -3, -3, -2, -2, -1, -1))
             ),
             Arguments.of(
                 /* input */    new ArrayList<>(Arrays.asList(-2, -3, 0, 3, 2)),
-                /* expected */ new ArrayList<>(Arrays.asList(-3, -2, 2, 3, 0))
-            ),
-            Arguments.of(
-                /* input */    new ArrayList<>(Arrays.asList(14, 2, -3, 5, 12, -8, -1, -12, 6)),
-                /* expected */ new ArrayList<>(Arrays.asList(-12, -1, -8, -3, 6, 12, 5, 2, 14))
+                /* expected */ new ArrayList<>(Arrays.asList(-2, -2, -3, -3, 0, 0, 3, 3, 2, 2))
             ),
             Arguments.of(
                 /* input */    new ArrayList<>(Arrays.asList(0)),
-                /* expected */ new ArrayList<>(Arrays.asList(0))
+                /* expected */ new ArrayList<>(Arrays.asList(0, 0))
             ),
             Arguments.of(
-                /* input */    new ArrayList<>(),
-                /* expected */ new ArrayList<>()
+                /* input */    new ArrayList<>(Arrays.asList()),
+                /* expected */ new ArrayList<>(Arrays.asList())
             )
         );
     }
 
     @ParameterizedTest(name = "case {index}: input={0} => expected={1}")
-    @MethodSource("splitStackProvider")
-    public void splitStackTest(ArrayList<Integer> input, ArrayList<Integer> expectedResult) {
+    @MethodSource("stutterProvider")
+    public void stutterTest(ArrayList<Integer> input, ArrayList<Integer> expectedResult) {
         // Prepare the input
         Stack<Integer> inputStack = helpers.StacksQueuesHelper.arrayListToStack(input);
 
         // Call the user code
-        Stack<Integer> actualStack = Solution.splitStack(inputStack);
+        Stack<Integer> actualStack = Solution.stutter(inputStack);
 
-        // Assert the actual result
+        // Assert the actual result meets expectations
         assertNotNull(actualStack);
         ArrayList<Integer> actualResult = helpers.StacksQueuesHelper.stackToArrayList(actualStack);
         assertEquals(
