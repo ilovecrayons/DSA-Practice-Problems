@@ -2,9 +2,12 @@ package solutions.StacksQueues;
 import java.util.Queue;
 import java.util.Stack;
 
-// TODO: please turn on word wrap (view -> word wrap)
+// TODO: Please turn on word wrap (view -> word wrap)
+
 // ? Stack reference: https://docs.oracle.com/javase/8/docs/api/java/util/Stack.html
 // ? Queue reference: https://docs.oracle.com/javase/8/docs/api/java/util/Queue.html
+
+// TODO: Run your code against the provided test cases in StacksQueuesTest.java (in src/tests) to verify correctness.
 
 public class StacksQueues {
     // TODO: Exercise 1: splitStack
