@@ -11,21 +11,21 @@
 - To do so, follow these steps:
   1. Create a new repository on your GitHub account (do not initialize it with a README, .gitignore, or license).
   2. In your local repository, run the following commands:
-     ```
+     ```bash
      git remote rename origin upstream
      git remote add origin <your-repo-url>
      ```
   3. Verify that the new origin is set correctly by running:
-     ```
+     ```bash
      git remote -v
      ```
   4. Now you can push your changes to your own repository using:
-     ```
-      git push origin main # or master, depending on your branch name
+     ```bash
+      git push origin master # or main, depending on how git configures your default branch name
       ```
   5. To pull updates from this repository, use:
-      ```
-      git pull upstream master # or master, depending on the branch name of this repo
+      ```bash
+      git pull upstream master
       ```
 
 ## Folder Structure
